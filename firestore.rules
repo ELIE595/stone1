@@ -1,0 +1,14 @@
+rules_version = '2';
+
+// Règles de sécurité Firestore pour Assa Crochet.
+// - Tout le monde peut LIRE les données du site (produits, réglages, etc.)
+//   car ce sont vos visiteurs qui doivent voir la boutique.
+// - Seule une personne connectée (vous, via l'espace pro) peut ÉCRIRE.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /siteData/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}

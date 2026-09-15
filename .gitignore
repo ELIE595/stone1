@@ -1,0 +1,10 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+*.swp
+
+# Sauvegardes exportées depuis l'espace pro (données personnelles, à ne pas versionner)
+*-donnees.json

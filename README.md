@@ -6,7 +6,7 @@ Site vitrine et boutique pour **Assa Crochet**, pièces au crochet faites main p
 
 - **Site public** : collection, configurateur sur-mesure, galerie, FAQ, commande directe sur WhatsApp.
 - **Espace pro intégré** : accessible via le bouton 🔒 *Espace pro* en bas du site (ou dans le menu mobile ☰), pour tout modifier sans toucher au code.
-- **Un seul fichier** : `index.html` contient absolument tout — HTML, CSS, JavaScript et toutes les images/vidéos par défaut. Aucune dépendance externe requise pour fonctionner.
+- **Léger et sans dépendance** : `index.html` (HTML, CSS, JavaScript) + un dossier `assets/` pour les photos et vidéos de démonstration. Aucun serveur, aucune installation, aucune dépendance externe requise pour fonctionner.
 
 ## 🚀 Démarrer en local
 
@@ -54,12 +54,17 @@ Tant que vous n'avez pas suivi ce guide, **aucun script externe n'est chargé** 
 
 ```
 assa-crochet/
-├── index.html          → le site complet (public + espace pro)
-├── firebase-setup.md   → guide pas-à-pas pour la base de données en ligne
-├── firestore.rules     → règles de sécurité à coller dans Firebase (base de données)
-├── storage.rules       → règles de sécurité à coller dans Firebase (photos)
-└── README.md           → ce fichier
+├── index.html            → le site complet (public + espace pro)
+├── assets/
+│   ├── images/            → photos par défaut (produits, logo)
+│   └── videos/             → vidéos par défaut de la bannière
+├── firebase-setup.md     → guide pas-à-pas pour la base de données en ligne
+├── firestore.rules       → règles de sécurité à coller dans Firebase (base de données)
+├── storage.rules         → règles de sécurité à coller dans Firebase (photos)
+└── README.md             → ce fichier
 ```
+
+`index.html` reste très léger (une centaine de Ko) car les photos/vidéos par défaut sont désormais des fichiers séparés dans `assets/`, chargés normalement par le navigateur. Gardez le dossier `assets/` à côté de `index.html` — sans lui, le site s'affiche mais sans les photos de démonstration.
 
 ## 🧵 Fonctionnalités de l'espace pro
 
